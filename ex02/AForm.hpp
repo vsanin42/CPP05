@@ -6,7 +6,7 @@
 /*   By: vsanin <vsanin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:03:58 by vsanin            #+#    #+#             */
-/*   Updated: 2025/06/16 20:07:01 by vsanin           ###   ########.fr       */
+/*   Updated: 2025/06/17 12:10:56 by vsanin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,14 @@ class AForm
 			public:
 				const char* what() const throw();
 		};
-
-		/* ex02 */
 		
-		virtual void execute(Bureaucrat const &executor) const = 0;
-
 		class FormNotSignedException : public std::exception
 		{
 			public:
-				const char* what() const throw();
+			const char* what() const throw();
 		};
+		
+		virtual void execute(Bureaucrat const &executor) const = 0;
 };
 
 std::ostream& operator<<(std::ostream& stream, const AForm& f);
